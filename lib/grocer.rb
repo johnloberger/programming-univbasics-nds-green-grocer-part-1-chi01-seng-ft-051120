@@ -1,7 +1,5 @@
 def find_item_by_name_in_collection(name, collection)
-  collection.find do
-    |name| name == name
-  end
+  collection.find {|item| item.fetch(:name) == name}
 end
 
 def consolidate_cart(cart)
